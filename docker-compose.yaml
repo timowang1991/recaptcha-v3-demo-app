@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  recaptcha-v3-demo-app:
+    container_name: recaptcha-v3-demo-app
+    image: node:16-alpine3.12
+    volumes:
+      - ./:/app
+    working_dir: /app
+    ports:
+      - 3000:3000
+    env_file: .env
+    command:
+      - /bin/sh
+      - -c
+      - |
+        node app.js
